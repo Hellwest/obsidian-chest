@@ -8,7 +8,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 set (sources
 	main.cpp
-	oc.cpp
+	oc.h
 	)
 
 add_executable(obsidian_test
