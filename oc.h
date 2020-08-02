@@ -1,20 +1,26 @@
 #pragma once
 
-#include <cstdlib>
-#include <time.h>
+#include <chrono>
 #include <random>
 
 namespace oc {
 	std::string random_sequence(int length) {
+		unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+		std::mt19937 generator(seed);
+
 		std::string result;
-		std::mt19937 gen;
-	
-		gen.seed(time(NULL));
 		for (int i = 0; i < length; ++i) {
-			int randomNumber = std::rand() % 26;
-			char letter = 'a' + randomNumber;
-			result += letter;
+			char x = generator() % 62;
+			if(x < 10) {
+				x+= '0';
+			} else if(x < 36) {
+				x += 'A' - 10;
+			} else {
+				x += 'a' - 36;
+			}
+			result += x;
 		}
+
 		return result;
 	}
 }
