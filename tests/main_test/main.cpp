@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-#include "oc.h"
+#include <oc.h>
 
 int main(int argc, char *argv[]) {
 	if (argc < 2) {

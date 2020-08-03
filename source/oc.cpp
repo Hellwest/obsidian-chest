@@ -1,7 +1,7 @@
 #include <chrono>
 #include <random>
 
-#include "oc.h"
+#include <oc.h>
 
 std::string OC::random_sequence(int length) {
 		uint64_t seed = std::chrono::system_clock::now().time_since_epoch().count();
