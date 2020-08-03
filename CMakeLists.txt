@@ -14,3 +14,9 @@ set (sources
 add_executable(obsidian_test
 	${sources}
 	)
+
+set_target_properties(obsidian_test PROPERTIES
+	CXX_STANDARD 17
+	CXX_STANDARD_REQUIRED YES
+	CXX_EXTENSIONS NO
+	)

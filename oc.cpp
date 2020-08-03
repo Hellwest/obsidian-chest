@@ -9,7 +9,7 @@ std::string OC::random_sequence(int length) {
 
 		std::string result;
 		for (int i = 0; i < length; ++i) {
-				int index = generator() % 62;
+				int index = generator() % table_size;
 				char character = OC::possible_chars[index];
 				result += character;
 		}
