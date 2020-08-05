@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+
 #include "oc.h"
 
 int main(int argc, char *argv[]) {
@@ -9,7 +10,7 @@ int main(int argc, char *argv[]) {
 	}
 
 	int length = std::stoi(argv[1]);
-	std::string result = oc::random_sequence(length);
+	std::string result = OC::random_sequence(length);
 
 	std::cout << result << "\n";
 
