@@ -16,4 +16,3 @@ std::string OC::random_sequence(int length) {
 
 		return result;
 };
-

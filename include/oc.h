@@ -16,4 +16,3 @@ class OC {
 	public:
 		static std::string random_sequence(int length);
 };
-
