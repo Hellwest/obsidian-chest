@@ -8,7 +8,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 set (sources
 	source/oc.cpp
-	source/default_manager.cpp
+	source/manager.cpp
 	)
 
 
