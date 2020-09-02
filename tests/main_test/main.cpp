@@ -2,7 +2,7 @@
 #include <string>
 
 #include <oc.h>
-#include <default_manager.h>
+#include <manager.h>
 
 int main(int argc, char *argv[]) {
 	if (argc < 2) {
@@ -15,9 +15,9 @@ int main(int argc, char *argv[]) {
 
 	std::cout << result << "\n";
 
-	DefaultManager* default_manager = new DefaultManager;
+	Manager* manager = new Manager;
 
-	default_manager->add_entry("test_service", "test_user", result);
+	manager->add_entry("test_service", "test_user", result);
 
 	return 0;
 }
