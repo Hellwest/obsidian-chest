@@ -15,9 +15,9 @@ int main(int argc, char *argv[]) {
 
 	std::cout << result << "\n";
 
-	Manager* manager = new Manager;
+	Manager manager;
 
-	manager->add_entry("test_service", "test_user", result);
+	manager.add_entry("test_service", "test_user", result);
 
 	return 0;
 }
