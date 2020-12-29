@@ -18,6 +18,8 @@ int main(int argc, char *argv[]) {
 	Manager manager;
 
 	manager.add_entry("test_service", "test_user", result);
+	// manager.read_entry("test_service");
+	manager.remove_entry("test_service");
 
 	return 0;
 }
