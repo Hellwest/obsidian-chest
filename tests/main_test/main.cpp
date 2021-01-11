@@ -1,18 +1,27 @@
 #include <iostream>
 #include <string>
+#include <vector>
+#include <algorithm>
 
 #include <oc.h>
 #include <manager.h>
 
+const std::vector<std::string> commands = { "ls", "generate", "read", "remove" };
+
 int main(int argc, char *argv[]) {
 	if (argc < 2) {
-		std::cout << "Provide a password length\n";
+		std::cout << "Provide a command\n";
 		return -1;
 	}
 
 	Manager manager;
 
-	std::string command = std::string(argv[1]);
+	const std::string command = std::string(argv[1]);
+
+	if (std::find(commands.begin(), commands.end(), command) == commands.end()) {
+		std::cout << "Unrecognized command: " << command << "\n";
+		return -1;
+	}
 
 	if (command == "ls") {
 		manager.ls();
