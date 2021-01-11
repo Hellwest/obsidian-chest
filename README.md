@@ -17,6 +17,12 @@ make
 
 ## Usage
 
+### List saved passwords
+
+```bash
+./bin/obsidian_test ls
+```
+
 ### Generate a password
 
 ```bash
