@@ -14,6 +14,10 @@ int main(int argc, char *argv[]) {
 
 	std::string command = std::string(argv[1]);
 
+	if (command == "ls") {
+		manager.ls();
+	}
+
 	if (command == "generate") {
 		if (argc < 3) {
 			std::cout << "Provide a password length\n";

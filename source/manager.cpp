@@ -1,11 +1,25 @@
 #include <iostream>
 #include <fstream>
-#include <stdio.h>
 
 #include <manager.h>
 
 char delimiter(',');
 std::string filename("./oc");
+
+void Manager::ls() {
+	std::ifstream f;
+	f.open(filename, std::ifstream::in);
+	if (!f.is_open()) {
+		std::cout << "Error: Failed to open a file\n";
+		exit(1);
+	}
+
+	for (std::string line; std::getline(f, line);) {
+		std::cout << line << "\n";
+	}
+
+	f.close();
+}
 
 void Manager::add_entry(std::string service_name, std::string user_name, std::string password) {
 	std::ifstream file_reading_stream;
@@ -49,7 +63,7 @@ std::string Manager::read_entry(std::string service_name) {
 
 	if (line.length() == 0) {
 		std::cout << "Record was not found\n";
-		exit(1);
+		exit(0);
 	}
 
 	std::size_t service_pos = line.find(delimiter);
