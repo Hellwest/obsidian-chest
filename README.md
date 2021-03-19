@@ -23,6 +23,12 @@ make
 ./bin/obsidian_test ls
 ```
 
+### Add an entry
+
+```bash
+./bin/obsidian_test add -s <service_name> -n <user_name> -p <password>
+```
+
 ### Generate a password
 
 ```bash

@@ -24,16 +24,18 @@ void Manager::ls() {
 void Manager::add_entry(std::string service_name, std::string user_name, std::string password) {
 	std::ifstream file_reading_stream;
 	file_reading_stream.open(filename, std::ifstream::in);
-	if (!file_reading_stream.is_open()) {
-		std::cout << "Error: Failed to open a file\n";
-		exit(1);
-	}
-	std::string line = this->find_line(file_reading_stream, service_name);
-	file_reading_stream.close();
+	if (!file_reading_stream.fail()) {
+		if (!file_reading_stream.is_open()) {
+			std::cout << "Error: Failed to open a file\n";
+			exit(1);
+		}
+		std::string line = this->find_line(file_reading_stream, service_name);
+		file_reading_stream.close();
 
-	if (line.length() > 0) {
-		std::cout << "Record exists\n";
-		exit(1);
+		if (line.length() > 0) {
+			std::cout << "Record exists\n";
+			exit(1);
+		}
 	}
 
 	std::ofstream f;
